@@ -10,7 +10,7 @@ public class Study4 {
 		System.out.println("숫자를 입력하세요 : ");  // 0이상의 정수를 입력
 		
 		int num = input.nextInt();
-		int result = num + 6;
+		int result = num/4*10 + num%4;
 		
 		System.out.println(num);
 		System.out.println(result);
