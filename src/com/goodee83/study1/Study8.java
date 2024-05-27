@@ -22,6 +22,7 @@ public class Study8 {
 					j++;
 				}else {
 					System.out.println("잘못 입력하였습니다. 올바른 번호를 입력해주세요");
+					i--;
 					break;
 				}
 			}
