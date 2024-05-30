@@ -15,11 +15,13 @@ public class Ex3Main {
 		car2.brand = "A7";
 		car2.company = "Audi";
 		
-		System.out.println(car);
-		car.info();
-		System.out.println(car2);
-		car2.info();
-
+//		System.out.println(car);
+//		car.info();
+//		System.out.println(car2);
+//		car2.info();
+		
+		Cal cal = new Cal();
+		cal.hap(1, 20L);
 	}
 
 }

@@ -27,9 +27,9 @@ public class StudentController {
 			} else if (select == 3) {
 				Student student = studentService.findByNum(students);
 				if (student != null) {
-					studentView.view2(student);
+					studentView.view(student);
 				} else {
-					studentView.view3("검색 결과가 없습니다.");
+					studentView.view("검색 결과가 없습니다.");
 				}
 
 			} else if (select == 4) {

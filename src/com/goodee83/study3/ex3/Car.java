@@ -13,6 +13,10 @@ public class Car {
 	public void info() {
 		System.out.println(this.color);
 		System.out.println(this.brand);
+		go();
+	}
+	
+	public void go() {
 		System.out.println(this.company);
 	}
 
