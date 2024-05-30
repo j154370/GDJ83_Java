@@ -7,6 +7,7 @@ public class StudentController {
 	public void start() {
 		Scanner input = new Scanner(System.in);
 		StudentService studentService = new StudentService();
+		StudentView studentView = new StudentView();
 		Student[] students = null;
 
 		while (true) {
@@ -15,28 +16,30 @@ public class StudentController {
 
 			if (select == 1) {
 				students = studentService.makeStudent();
-				
 
 			} else if (select == 2) {
-				for (int i = 0; i < students.length; i++) {
-					System.out.println(students[i].name);
-					
+				if (students != null) {
+					studentView.view(students);
+				} else {
+					System.out.println("입력된 정보가 없습니다.");
 				}
 
 			} else if (select == 3) {
-				System.out.println("학생 정보 검색 코드 작성");
-				
-				
+				Student student = studentService.findByNum(students);
+				if (student != null) {
+					studentView.view2(student);
+				} else {
+					studentView.view3("검색 결과가 없습니다.");
+				}
+
 			} else if (select == 4) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
-				
-				
+
 			} else {
 				System.out.println("올바른 번호를 입력해주세요.");
 				continue;
-				
-				
+
 			}
 		}
 	}

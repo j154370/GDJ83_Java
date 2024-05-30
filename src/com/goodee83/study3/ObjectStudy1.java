@@ -12,6 +12,18 @@ public class ObjectStudy1 {
 		
 		sr.t2();
 		
+		int sal = 5000000;
+		sr.t4(sal);
+		
+		
+		Test test = new Test();
+		System.out.println();
+		test.level = 1;
+		sr.t5(test);
+		System.out.println(test.level);
+		
+		
+		
 		
 		
 		
