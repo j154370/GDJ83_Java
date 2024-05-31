@@ -1,17 +1,14 @@
 package com.goodee83.s1;
 
-import com.goodee83.s2.MidStudent;
-
 public class S1Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) {		
+		Test test = new Test();
+		String str = test.toString();
+		System.out.println(str);
 		
-		MidStudent midStudent = new MidStudent();
+		System.out.println(String.CASE_INSENSITIVE_ORDER);
 		
-		midStudent.info();
-		
-
 	}
 
 }
