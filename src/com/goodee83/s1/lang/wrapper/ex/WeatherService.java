@@ -106,5 +106,28 @@ public class WeatherService {
 		return dtos2;
 
 	}
+	
+	// 검색해서 일치하는 번호를 삭제
+	// removeWeather
+	
+	public WeatherDTO[] removeWeather(WeatherDTO[] dtos) {
+		
+		System.out.println("삭제하고자 하는 도시 명을 입력하세요.");
+		String search = sc.next();
+		
+		WeatherDTO[] dtos2 = new WeatherDTO[dtos.length-1];
+		
+		int j = 0;
+		for(int i = 0 ; i < dtos.length; i++) {
+			if(search.equals(dtos[i].getCity())) {
+				continue;
+			}
+			dtos2[j] = dtos[i];
+			j++;
+			// 문제 코드 : 한 번도 일치하는게 없을 경우 바운더리 입센션 발생
+		}
+		
+		return dtos2;
+	}
 
 }
