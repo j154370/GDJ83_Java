@@ -26,15 +26,17 @@ public class WeatherController {
 		// 2. 종료
 
 		while (true) {
-			System.out.println("1. 날씨 정보 출력 | 2. 날씨 정보 검색 | 3. 종료");
+			System.out.println("1. 날씨 정보 출력 | 2. 날씨 정보 검색 | 3. 날씨 정보 추가 |  4. 종료");
 			int menu = sc.nextInt();
 			
 			if (menu == 1) {
 				view.view(dtos);
 			} else if (menu == 2) {
 				dto = service.findByCity(dtos);
-				view.SingleView(dto);
+				view.singleView(dto);
 			} else if(menu == 3){
+				dtos = service.addWeather(dtos);
+			}else if(menu == 4){
 				System.out.println("프로그램을 종료합니다.");
 				return;
 			} else {

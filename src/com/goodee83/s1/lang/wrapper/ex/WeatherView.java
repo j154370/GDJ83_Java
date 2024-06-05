@@ -20,7 +20,7 @@ public class WeatherView {
 		
 	}
 	
-	public void SingleView(WeatherDTO dto) {
+	public void singleView(WeatherDTO dto) {
 			
 			if(dto == null) {
 				System.out.println("잘못된 지역명입니다. 다시 입력해주세요.");
