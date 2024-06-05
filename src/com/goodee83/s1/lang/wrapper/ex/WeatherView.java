@@ -19,5 +19,18 @@ public class WeatherView {
 		
 		
 	}
+	
+	public void SingleView(WeatherDTO dto) {
+			
+			if(dto == null) {
+				System.out.println("잘못된 지역명입니다. 다시 입력해주세요.");
+			}else {
+				System.out.print(dto.getCity() + "	-	");
+				System.out.print(dto.getTemperature() + "	-	");
+				System.out.print(dto.getStatus() + "	-	");
+				System.out.print(dto.getHumidity());
+				System.out.println("");
+			}
+	}
 
 }

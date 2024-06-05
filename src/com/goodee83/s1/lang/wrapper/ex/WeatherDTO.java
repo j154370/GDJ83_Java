@@ -12,6 +12,7 @@ public class WeatherDTO {
 	
 	
 	
+	
 	//getter와 setter Method
 	public String getCity() {
 		return city;

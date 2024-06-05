@@ -1,5 +1,7 @@
 package com.goodee83.s1.lang.wrapper.ex;
 
+import java.util.Scanner;
+
 public class WeatherService {
 
 	// Controller
@@ -46,6 +48,28 @@ public class WeatherService {
 		}
 		
 		return dtos;
+	}
+	
+	// 날씨 정보를 도시명으로 검색 메서드
+	// 검색해서 해당 날씨 정보를 리턴한다. 출력은 view에서만 한다.
+	// view에는 날씨 정보 하나만 출력하는 메서드가 필요하다.
+	
+	public WeatherDTO findByCity(WeatherDTO[] dtos) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("찾고자 하는 도시 명을 입력하세요.");
+		String search = sc.next();
+		
+		
+		for(int i = 0; i < dtos.length; i++) {
+			
+			if(search.equals(dtos[i].getCity())) {
+				return dtos[i];
+			}
+		}
+		return null;
+		
+		
 	}
 
 }
