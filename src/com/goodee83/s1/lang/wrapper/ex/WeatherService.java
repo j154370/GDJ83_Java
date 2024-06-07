@@ -1,6 +1,7 @@
 package com.goodee83.s1.lang.wrapper.ex;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WeatherService {
 
@@ -26,10 +27,29 @@ public class WeatherService {
 
 		info = info.replace(",", "-");
 
-		WeatherDTO[] dtos = this.getWeathers(info);
+		WeatherDTO[] dtos = this.useTokenizer(info); //this.getWeathers(info);
 
 		return dtos;
 
+	}
+	
+	private WeatherDTO[] useTokenizer(String info) {
+		StringTokenizer st = new StringTokenizer(info, "-");
+		WeatherDTO[] dtos = new WeatherDTO[4];
+
+		int i = 0;
+		while(st.hasMoreTokens()) {
+			WeatherDTO dto = new WeatherDTO();
+			dto.setCity(st.nextToken().trim());
+			dto.setTemperature(Double.parseDouble(st.nextToken().trim()));
+			dto.setStatus(st.nextToken().trim());
+			dto.setHumidity(Integer.parseInt(st.nextToken().trim()));
+			
+			dtos[i] = dto;
+			i++;
+		}
+		return dtos;
+		
 	}
 
 	private WeatherDTO[] getWeathers(String info) {
@@ -121,6 +141,9 @@ public class WeatherService {
 		for(int i = 0 ; i < dtos.length; i++) {
 			if(search.equals(dtos[i].getCity())) {
 				continue;
+			}
+			if(j == dtos.length-1) {
+				return dtos;
 			}
 			dtos2[j] = dtos[i];
 			j++;
